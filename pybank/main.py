@@ -1,3 +1,4 @@
+
 # create file path across operating systems
 import os
 # Module for reading csv files
@@ -6,13 +7,10 @@ csvpath = os.path.join('budget_data.csv')
 # lists to be analyzed/reported
 months = []
 net_income = []
-net_loss = 0
-net_income_average_change = []
+net_income_average = 0
 date = []
-average_change =0
 writefile ='w'
 readfile ='r'
-greatest_dec_month=0
 # read csv and parse data into lists
 with open(csvpath, newline='') as csvfile:
    csvreader = csv.reader(csvfile)
@@ -31,12 +29,12 @@ for r in range(len(net_income)):
    if net_income[r] >= greatest_inc:
        greatest_inc = net_income[r]
        great_inc_month = months[r]
-   then net_loss[r] = greatest_dec:
-       greatest_dec = net_loss[r]
+   elif net_income[r] <= greatest_dec:
+       greatest_dec = net_income[r]
        great_dec_month = months[r]
-   totalnet_loss = net_loss[r]
-#calculate net_income_average_change
-net_income_average_change ==totalnet_income-net_loss/total_months
+   totalnet_income += net_income[r]
+#calculate average_change
+average_change = round(totalnet_income/total_months, 12)
 #sets path for output file
 output_pybank = os.path.join('pybank_output.csv')
 # opens the output destination in write mode and prints the summary
