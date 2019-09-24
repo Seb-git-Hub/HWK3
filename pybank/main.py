@@ -1,4 +1,3 @@
-
 # create file path across operating systems
 import os
 # Module for reading csv files
@@ -8,6 +7,7 @@ csvpath = os.path.join('budget_data.csv')
 months = []
 net_income = []
 net_income_average = 0
+months_months_change = []
 date = []
 writefile ='w'
 readfile ='r'
@@ -34,7 +34,7 @@ for r in range(len(net_income)):
        great_dec_month = months[r]
    totalnet_income += net_income[r]
 #calculate average_change
-average_change = round(totalnet_income/total_months, 12)
+average_change = round(totalnet_income/totalnet_income, -1)
 #sets path for output file
 output_pybank = os.path.join('pybank_output.csv')
 # opens the output destination in write mode and prints the summary
@@ -51,5 +51,13 @@ with open(output_pybank, 'r') as readfile:
    print(readfile.read())
 # Close file
    writefile.close()
+
+
+
+
+
+
+
+
 
 
