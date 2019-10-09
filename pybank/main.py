@@ -21,7 +21,7 @@ with open(csvpath, newline='') as csvfile:
 # find total months
 total_months = len(months)
 # create greatest increase and decrease in profits as a variable
-greatest_inc = net_income[0]
+greatest_inc = net_income[1] - net_income[0]
 greatest_dec = net_income[0]
 totalnet_income = 0
 # loop through profits indices and compare to find greatest increase and decrease
@@ -34,7 +34,7 @@ for r in range(len(net_income)):
        great_dec_month = months[r]
    totalnet_income += net_income[r]
 #calculate average_change
-average_change = round(totalnet_income/totalnet_income, -1)
+average_change = round(totalnet_income/len(months), -1)
 #sets path for output file
 output_pybank = os.path.join('pybank_output.csv')
 # opens the output destination in write mode and prints the summary
@@ -51,13 +51,3 @@ with open(output_pybank, 'r') as readfile:
    print(readfile.read())
 # Close file
    writefile.close()
-
-
-
-
-
-
-
-
-
-
