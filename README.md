@@ -1,3 +1,3 @@
-# python-challage-
+# python-challeng-
 
 repository for hwk 3
